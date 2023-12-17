@@ -17,6 +17,7 @@ pixels = neopixel.NeoPixel(board.D18, pixelCount)
 server = StupidArtnetServer()
 u1_listener = server.register_listener(universe)
 while True:
+	# Adding in a undate outside this loop should increase speed signifigently
 	data = server.get_buffer(listener_id=u1_listener)
 	if len(data) > 0:
 		#print(data)
